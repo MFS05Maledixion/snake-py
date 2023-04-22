@@ -27,8 +27,32 @@ blue = pygame.Color(0, 205, 205)
 pygame.init()
 
 # initializing the window
-pygame.display.set_caption('Snake Game in Python')
+pygame.display.set_caption("Snake Game in Python")
 window = pygame.display.set_mode((width_x, height_y))
 
 # to control the fps of the game
 frame_per_sec = pygame.time.Clock()
+
+# define snake position at default
+position_snake = [120, 60]
+
+# creating the snake body by assigning five blocks to it
+snake_body = [
+    [120, 60],
+    [110, 60],
+    [100, 60],
+    [90, 60],
+    [80, 60],
+]
+
+# allocated food in a random manner within game window
+position_food = [
+    random.randrange(1, (width_x // 10)) * 10,
+    random.randrange(1, (height_y // 10)) * 10,
+]
+
+spawn_food = True
+
+# defining the default direction of the snake on onset of the game
+snake_direction = "LEFT"
+flexible_to_change = snake_direction
