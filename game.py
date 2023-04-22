@@ -82,3 +82,35 @@ def score_metrics(selection, color, font, size):
 
     # build display
     window.blit(surface_score, rect_score)
+
+
+# creating the GAME OVER function
+print('creating the GAME OVER function...')
+def game_over():
+
+    # game over font
+    game_over_font = pygame.font.SysFont('times new roman', 50)
+
+    # game over surface
+    game_over_surface = game_over_font.render('GAME OVER!' + str(score), True, red)
+
+    # game over rectangle
+    game_over_rect = game_over_surface.get_rect()
+
+    # game over display in middle of screen
+    game_over_rect.midtop = (width_x / 2, height_y / 4)
+
+    # game over display
+    window.blit(game_over_surface, game_over_rect)
+
+    # update score with flip
+    pygame.display.flip()
+
+    # five second delay
+    time.sleep(5)
+
+    # quit game
+    pygame.quit()
+
+    # exit console
+    quit()
