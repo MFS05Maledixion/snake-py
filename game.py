@@ -114,3 +114,43 @@ def game_over():
 
     # exit console
     quit()
+
+
+# creating the main function for the game
+print('creating the main function for the game...')
+def main():
+    while True:
+        # validate keystrokes for movement
+        for event in pygame.event.get():
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_UP:
+                    flexible_to_change = "UP"
+                if event.key == pygame.K_DOWN:
+                    flexible_to_change = "DOWN"
+                if event.key == pygame.K_LEFT:
+                    flexible_to_change = "LEFT"
+                if event.key == pygame.K_RIGHT:
+                    flexible_to_change = "RIGHT"
+        
+
+        # since we dont want opposite directions in our case we are using this if condition
+        if flexible_to_change == "UP" and snake_direction != "DOWN":
+            snake_direction = "UP"
+        if flexible_to_change == "DOWN" and snake_direction != "UP":
+            snake_direction = "DOWN"
+        if flexible_to_change == "LEFT" and snake_direction != "RIGHT":
+            snake_direction = "LEFT"
+        if flexible_to_change == "RIGHT" and snake_direction != "LEFT":
+            snake_direction = "RIGHT"
+
+
+        # making the snake move
+        if snake_direction == "UP":
+            position_snake[1] -= 10
+        if snake_direction == "DOWN":
+            position_snake[1] += 10
+        if snake_direction == "LEFT":
+            position_snake[0] -= 10
+        if snake_direction == "RIGHT":
+            position_snake[0] += 10
+            
