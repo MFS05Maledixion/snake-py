@@ -64,7 +64,7 @@ spawn_food = True
 
 # defining the default direction of the snake on onset of the game
 print("setting the default direction of the snake on onset of the game...")
-snake_direction = "LEFT"
+snake_direction = "RIGHT"
 flexible_to_change = snake_direction
 
 
@@ -141,7 +141,7 @@ def main():
                 if event.key == pygame.K_SPACE:
                     hasPressedSpace = True
 
-    
+
     while True:
         # validate keystrokes for movement
         for event in pygame.event.get():
