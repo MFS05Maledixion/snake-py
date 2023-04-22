@@ -22,3 +22,13 @@ white = pygame.Color(255, 255, 255)
 red = pygame.Color(255, 64, 64)
 green = pygame.Color(118, 238, 0)
 blue = pygame.Color(0, 205, 205)
+
+# initializing the pygame
+pygame.init()
+
+# initializing the window
+pygame.display.set_caption('Snake Game in Python')
+window = pygame.display.set_mode((width_x, height_y))
+
+# to control the fps of the game
+frame_per_sec = pygame.time.Clock()
