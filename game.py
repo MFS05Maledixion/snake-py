@@ -124,6 +124,24 @@ print("creating the main function for the game...")
 
 
 def main():
+    global flexible_to_change
+    global snake_direction
+    global score
+    global spawn_food
+    global position_food
+    global snake_body
+    global position_snake
+
+    # waiting for user to press space to start game
+    print("waiting for user to press space to start game...")
+    hasPressedSpace = False
+    while not hasPressedSpace:
+        for event in pygame.event.get():
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    hasPressedSpace = True
+
+    
     while True:
         # validate keystrokes for movement
         for event in pygame.event.get():
