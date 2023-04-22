@@ -214,3 +214,7 @@ def main():
         # refresh rate of the game
         print("setting the refresh rate of the game...")
         frame_per_sec.tick(snake_speed)
+
+# calling the main function
+print("calling the main function...")
+main()
